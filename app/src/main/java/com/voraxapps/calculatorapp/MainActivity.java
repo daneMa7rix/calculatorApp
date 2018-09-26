@@ -140,6 +140,7 @@ public class MainActivity extends Activity {
                 result = 0;
                 runningNumber = "";
                 currentOperation = null;
+                resultsView.setText("0");
             }
         });
 
