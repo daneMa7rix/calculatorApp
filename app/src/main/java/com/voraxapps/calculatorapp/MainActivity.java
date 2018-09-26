@@ -10,6 +10,23 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
+    TextView resultsView;
+
+    public enum Operation {
+        ADD, SUBTRACT, DIVIDE, MULTIPLY, EQUAL
+    }
+
+
+    String runningNumber = "";
+    String leftValueStr = "";
+    String rightValueStr = "";
+
+    Operation currentOperation;
+
+    int result = 0;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,96 +50,103 @@ public class MainActivity extends Activity {
         ImageButton divideBtn = findViewById(R.id.divideBtn);
         ImageButton multiplyBtn = findViewById(R.id.multiplyBtn);
 
-        TextView resultsView = findViewById(R.id.resultsText);
+        resultsView = findViewById(R.id.resultsText);
+
+        resultsView.setText("");
+
 
         oneBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                numberPressed(1);
             }
         });
 
         twoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                numberPressed(2);
             }
         });
 
         threeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                numberPressed(3);
             }
         });
 
         fourBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                numberPressed(4);
             }
         });
 
         fiveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                numberPressed(5);
             }
         });
 
         sixBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                numberPressed(6);
             }
         });
 
         sevenBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                numberPressed(7);
             }
         });
 
         eightBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                numberPressed(8);
             }
         });
 
         nineBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                numberPressed(9);
             }
         });
 
         zeroBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                numberPressed(0);
             }
         });
 
         calcBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                processOperation(Operation.EQUAL);
             }
         });
 
         clearBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                leftValueStr = "";
+                rightValueStr = "";
+                result = 0;
+                runningNumber = "";
+                currentOperation = null;
             }
         });
 
         addBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                processOperation(Operation.ADD);
             }
         });
 
@@ -130,7 +154,7 @@ public class MainActivity extends Activity {
         subtractBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                processOperation(Operation.SUBTRACT);
             }
         });
 
@@ -138,6 +162,7 @@ public class MainActivity extends Activity {
         divideBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                processOperation(Operation.DIVIDE);
 
             }
         });
@@ -146,9 +171,44 @@ public class MainActivity extends Activity {
         multiplyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                processOperation(Operation.MULTIPLY);
             }
         });
-        
+    }
+
+    void processOperation(Operation operation){
+        if (currentOperation != null) {
+            if (runningNumber != "") {
+                rightValueStr = runningNumber;
+                runningNumber = "";
+
+                switch(currentOperation) {
+                    case ADD:
+                        result = Integer.parseInt(leftValueStr) + Integer.parseInt(rightValueStr);
+                        break;
+                    case SUBTRACT:
+                        result = Integer.parseInt(leftValueStr) - Integer.parseInt(rightValueStr);
+                        break;
+                    case MULTIPLY:
+                        result = Integer.parseInt(leftValueStr) * Integer.parseInt(rightValueStr);
+                        break;
+                    case DIVIDE:
+                        result = Integer.parseInt(leftValueStr) / Integer.parseInt(rightValueStr);
+                        break;
+                }
+                leftValueStr = String.valueOf(result);
+                resultsView.setText(leftValueStr);
+            }
+        } else {
+            leftValueStr = runningNumber;
+            runningNumber = "";
+        }
+        currentOperation = operation;
+
+    }
+
+    void numberPressed(int number) {
+        runningNumber += String.valueOf(number);
+        resultsView.setText(runningNumber);
     }
 }
