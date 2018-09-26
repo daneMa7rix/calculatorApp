@@ -32,7 +32,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/resultsText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -53,7 +53,7 @@
             android:weightSum="4">
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/sevenBtn"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -62,7 +62,7 @@
                 android:textColor="@android:color/black" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/eightBtn"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -71,7 +71,7 @@
                 android:textColor="@android:color/black" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/nineBtn"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -80,7 +80,7 @@
                 android:textColor="@android:color/black" />
 
             <ImageButton
-                android:id="@+id/imageButton2"
+                android:id="@+id/divideBtn"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -98,16 +98,7 @@
             android:weightSum="4">
 
             <Button
-                android:id="@+id/button2"
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@android:color/background_light"
-                android:text="5"
-                android:textColor="@android:color/black" />
-
-            <Button
-                android:id="@+id/button3"
+                android:id="@+id/fourBtn"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -116,7 +107,16 @@
                 android:textColor="@android:color/black" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/fiveBtn"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/background_light"
+                android:text="5"
+                android:textColor="@android:color/black" />
+
+            <Button
+                android:id="@+id/sixBtn"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -125,7 +125,7 @@
                 android:textColor="@android:color/black" />
 
             <ImageButton
-                android:id="@+id/imageButton2"
+                android:id="@+id/multiplyBtn"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -143,16 +143,7 @@
             android:weightSum="4">
 
             <Button
-                android:id="@+id/button"
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@android:color/background_light"
-                android:text="3"
-                android:textColor="@android:color/black" />
-
-            <Button
-                android:id="@+id/button3"
+                android:id="@+id/oneBtn"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -161,7 +152,7 @@
                 android:textColor="@android:color/black" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/twoBtn"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -169,8 +160,17 @@
                 android:text="2"
                 android:textColor="@android:color/black" />
 
+            <Button
+                android:id="@+id/threeBtn"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@android:color/background_light"
+                android:text="3"
+                android:textColor="@android:color/black" />
+
             <ImageButton
-                android:id="@+id/imageButton2"
+                android:id="@+id/subtractBtn"
                 android:layout_width="80dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -188,7 +188,7 @@
             android:weightSum="4">
 
             <Button
-                android:id="@+id/button8"
+                android:id="@+id/clearBtn"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
@@ -198,7 +198,7 @@
                 android:textSize="25sp" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/zeroBtn"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -207,7 +207,7 @@
                 android:textColor="@android:color/black" />
 
             <ImageButton
-                android:id="@+id/imageButton2"
+                android:id="@+id/addBtn"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -220,7 +220,7 @@
     </LinearLayout>
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/calcBtn"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="132dp"
